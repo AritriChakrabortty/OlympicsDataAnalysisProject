@@ -93,3 +93,37 @@ def country_event_heatmap(df, country):
     pt = new_df.pivot_table(index='Sport', columns='Year', values='Medal', aggfunc='count').fillna(0)
 
     return pt
+
+
+def most_successful_countrywise(df, country):
+    temp_df = df.dropna(subset=['Medal'])
+
+    temp_df = temp_df[temp_df['region'] == country]
+
+    x = temp_df['Name'].value_counts().reset_index().head(15).merge(df, left_on='index', right_on='Name', how='left')[
+        ['index', 'Name_x', 'Sport']].drop_duplicates('index')
+    x.rename(columns={'index': 'Name', 'Name_x': 'Medals'}, inplace=True)
+    return x
+
+
+def weight_v_height(df, sport):
+    athelete_df = df.drop_duplicates(subset=['Name', 'region'])
+    athelete_df['Medal'].fillna('No Medal', inplace=True)
+    if sport != 'Overall':
+        temp_df = athelete_df[athelete_df['Sport'] == sport]
+        return temp_df
+    else:
+        return athelete_df
+
+def men_vs_woman(df):
+    athelete_df = df.drop_duplicates(subset=['Name', 'region'])
+
+    men = athelete_df[athelete_df['Sex'] == 'M'].groupby('Year').count()['Name'].reset_index()
+    woman = athelete_df[athelete_df['Sex'] == 'F'].groupby('Year').count()['Name'].reset_index()
+
+    final = men.merge(woman, on='Year', how='left')
+    final.rename(columns={'Name_x': 'Male', 'Name_y': 'Female'}, inplace=True)
+
+    final.fillna(0, inplace=True)
+
+    return final
