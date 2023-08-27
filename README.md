@@ -1,7 +1,7 @@
 
 # Olympics Data Analysis Project
 
-![Olympics Data Analysis](Olympics-Emblem.png)
+![Logo](Olympics-Emblem.png)
 
 ## Description
 
