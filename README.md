@@ -1,7 +1,7 @@
 
 # Olympics Data Analysis Project
 
-![Olympics Data Analysis](https://github.com/AritriChakrabortty/OlympicsDataAnalysisProject/blob/main/olympics.png)
+![Olympics Data Analysis](Olympics-Emblem.png)
 
 ## Description
 
