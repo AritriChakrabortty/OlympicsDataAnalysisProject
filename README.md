@@ -23,6 +23,13 @@ The **Olympics Data Analysis Project** is a data analysis project that focuses o
 - Utilizes data visualization libraries for insightful data representation.
 - Easy-to-use buttons and controls for selecting different analyses.
 
+## Sections
+In this project there are total 4 sections.
+- Medel Tally
+- Overall Analysis
+- Country-wise Analysis
+- Athlete wise Analysis
+
 ## Getting Started
 
 1. Clone the repository:

@@ -21,6 +21,7 @@ user_menu = st.sidebar.radio(
 
 # st.dataframe(df)
 
+# 1. Medel Tally Section
 if user_menu == 'Medel Tally':
     st.sidebar.header("Medal Tally")
     years,country = helper.country_year_list(df)
@@ -39,6 +40,8 @@ if user_menu == 'Medel Tally':
         st.title(selected_country + " perform in " + str(selected_year) + " Olympics")
     st.table(medal_tally)
 
+
+# 2. Overall Analysis Section
 if user_menu == 'Overall Analysis':
     editions = df['Year'].unique().shape[0] - 1
     cities = df['City'].unique().shape[0]
@@ -102,6 +105,8 @@ if user_menu == 'Overall Analysis':
     # st.table(x)
 
 
+
+# 3. Country-wise Analysis Section
 if user_menu == 'Country-wise Analysis':
     st.sidebar.title('Country-wise analysis')
 
@@ -127,6 +132,8 @@ if user_menu == 'Country-wise Analysis':
     # st.table(top10_df)
 
 
+
+# 4. Athlete wise Analysis Section
 if user_menu == 'Athlete wise Analysis':
     athelete_df = df.drop_duplicates(subset=['Name', 'region'])
 
