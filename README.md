@@ -1,8 +1,6 @@
 
 # Olympics Data Analysis Project
 
-![Logo](Olympics-Emblem.png)
-
 ## Description
 
 The **Olympics Data Analysis Project** is a data analysis project that focuses on analyzing Olympic Games data. It provides a web application interface for users to explore various types of tallies and analyses related to the Olympics. The project is implemented in Python and utilizes popular data science libraries for backend analysis and the Streamlit framework for the frontend.
